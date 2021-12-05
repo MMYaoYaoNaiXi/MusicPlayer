@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.musicapplication">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:logo="@mipmap/logo"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.musicapplication.activity.DisplayActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|keyboard|keyboardHidden|screenLayout|fontScale|orientation|screenSize|smallestScreenSize"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+
+        <activity
+            android:name="com.example.musicapplication.activity.SearchDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|keyboard|keyboardHidden|screenLayout|fontScale|orientation|screenSize|smallestScreenSize"
+            tools:ignore="LockedOrientationActivity">
+
+        </activity>
+        <activity
+            android:name="com.example.musicapplication.activity.SearchNetActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|keyboard|keyboardHidden|screenLayout|fontScale|orientation|screenSize|smallestScreenSize"
+            tools:ignore="LockedOrientationActivity">
+
+        </activity>
+
+        <activity
+            android:name="com.example.musicapplication.activity.SongDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|keyboard|keyboardHidden|screenLayout|fontScale|orientation|screenSize|smallestScreenSize"
+            tools:ignore="LockedOrientationActivity">
+
+        </activity>
+
+        <activity
+            android:name="com.example.musicapplication.activity.MyLoveSongsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|keyboard|keyboardHidden|screenLayout|fontScale|orientation|screenSize|smallestScreenSize"
+            tools:ignore="LockedOrientationActivity">
+
+        </activity>
+        <service
+            android:name="com.example.musicapplication.service.DownMusicService"
+            android:exported="true" />
+
+        <service
+            android:name="com.example.musicapplication.service.MusicService"
+            android:exported="true" />
+    </application>
+
+</manifest>
